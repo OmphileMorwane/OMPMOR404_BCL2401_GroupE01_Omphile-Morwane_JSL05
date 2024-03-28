@@ -39,20 +39,24 @@ const guardians = {
 
  // Function to generate playlist based on preferred genre
  function generatePlaylist(guardians, songs) {
-    const playlists = {};
-
-    // Iterate over each guardian
-    Object.keys(guardians).forEach(guardian => {
+    const playlists = Object.keys(guardians).map(guardian => {   
       const preferredGenre = guardians[guardian];
       // Filter songs based on the guardian's preferred genre
       const playlist = songs.filter(song => song.genre === preferredGenre);
-      // Store the playlist for the current guardian
-      playlists[guardian] = playlist;
+      return {
+        guardian: guardian,
+        playlist: playlist
+      };
+
     });
 
-    // Return the playlists
-    return playlists;
-  }
+    const playlistsObject ={};
+    playlists.forEach (item =>{
+    playlistsObject[item.guardian] = item.playlist;
+    });
+
+    return playlistsObject;
+   }
 
   // Function to display playlists for each guardian
   function displayPlaylists(playlists) {
@@ -65,12 +69,17 @@ const guardians = {
       playlistElement.classList.add('playlist');
       
       // Create heading for guardian's playlist
-      const heading = document.createElement('h3');
+      const heading = document.createElement('h2');
       heading.textContent = `${guardian}'s Playlist:`;
       playlistElement.appendChild(heading);
       
       // Create list of songs
       const songList = document.createElement('ul');
+      songList.style.listStyleType = "none";
+      songList.style.padding = "0";
+      songList.style.margin = "0"
+
+
       playlist.forEach(song => {
         const songItem = document.createElement('li');
         songItem.textContent = `${song.title} - ${song.artist}`;
