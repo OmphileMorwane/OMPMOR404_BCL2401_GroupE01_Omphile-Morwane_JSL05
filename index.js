@@ -71,17 +71,17 @@ const guardians = {
       playlistElement.appendChild(heading);
       
       // Create list of songs 
-      const songList = document.createElement('ul');
-      songList.style.listStyleType = "none";
+      const songList = document.createElement('ul'); 
+      songList.style.listStyleType = "none";  // removes bullets
       playlist.forEach(song => {
           const songItem = document.createElement('li');
-          songItem.classList.add('song');
+          songItem.classList.add('song');  //adds apces in between songs
           const songTitle = document.createElement('span');
           songTitle.textContent = song.title;
-          songTitle.classList.add('song-title');
+          songTitle.classList.add('song-title'); //Added CSS clatext color and styling
           songItem.appendChild (songTitle);
 
-          songItem.innerHTML += ` by ${song.artist}`;
+          songItem.innerHTML += ` by ${song.artist}`;  //Concatenate the artist name with the song item HTML
           songList.appendChild(songItem);
 
         });
