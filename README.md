@@ -23,7 +23,7 @@ Coding a clean code and find better error handling mechanisms.
 
 ## Overall learning experience:
 
-Through this project, I practiced using Javascript to change data. I learned how to implement CSS and HTML through Javascript. I also had a fair practice on DOM manipulation.
+Through this project, I practiced using Javascript to change data. I learned how to implement CSS and HTML through Javascript. I also had a fair practice on DOM manipulation..
 
 
 
