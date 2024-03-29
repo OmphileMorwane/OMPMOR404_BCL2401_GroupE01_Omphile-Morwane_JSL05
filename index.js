@@ -75,13 +75,13 @@ const guardians = {
       songList.style.listStyleType = "none";
       playlist.forEach(song => {
           const songItem = document.createElement('li');
+          songItem.classList.add('song');
           const songTitle = document.createElement('span');
           songTitle.textContent = song.title;
           songTitle.classList.add('song-title');
           songItem.appendChild (songTitle);
 
           songItem.innerHTML += ` by ${song.artist}`;
-          songItem.style.marginBottom = "10px";
           songList.appendChild(songItem);
 
         });

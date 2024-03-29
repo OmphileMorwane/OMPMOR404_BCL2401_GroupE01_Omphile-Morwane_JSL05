@@ -21,7 +21,6 @@ In this challenge, you'll combine your knowledge of JavaScript arrays and the `m
 3. **Generate Playlists**: Implement the `generatePlaylist` function. Use the `map()` function to create a personalized playlist for each Guardian based on their genre preference.
 4. **Display Playlists**: Dynamically create and append elements to the `#playlists` div to display each Guardian's playlist. Include the Guardian's name and their list of songs.
 5. **Test Your Application**: Ensure that your application correctly filters songs by genre for each Guardian and displays the playlists on the web page.
-
 ## What You Need to Do:
 
 1. Clone the provided Starter Code Repository to your local development environment (e.g., VSCode): https://github.com/CodeSpace-Academy/Module_5_StudentNo_Classcode_Group_Name-Surname_JSL05
