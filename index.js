@@ -30,36 +30,33 @@ const songs = [
 const guardians = {
   "Star-Lord": "Rock",
   "Gamora": "Pop",
+// Added preferences for Drax, Rocket, and Groot
   "Drax": "R&B" ,
   "Rocket": "Grunge" ,
   "Groot" : "Country" ,
 
-  // Add preferences for Drax, Rocket, and Groot
+ 
 };
 
  // Function to generate playlist based on preferred genre
- function generatePlaylist(guardians, songs) {
-    const playlists = Object.keys(guardians).map(guardian => {   
-      const preferredGenre = guardians[guardian];
-      // Filter songs based on the guardian's preferred genre
-      const playlist = songs.filter(song => song.genre === preferredGenre);
-      return {
-        guardian: guardian,
-        playlist: playlist
-      };
+ function generatePlaylist(guardians, songs) {   
+    //creates an object of playlist for each guardian
+    const playlistsObject = Object.fromEntries(
+        Object.entries(guardians).map (([guardian, preferredGenre]) => {
+            //Filter songs based on guardia preferred genre
+            const playlist = songs.filter(song => song.genre === preferredGenre);
+            return [guardian, playlist];
 
-    });
-
-    const playlistsObject ={};
-    playlists.forEach (item =>{
-    playlistsObject[item.guardian] = item.playlist;
-    });
-
+        })
+    );
+       
+    //Return the object containing playlists for each guardian
     return playlistsObject;
+    
    }
 
   // Function to display playlists for each guardian
-  function displayPlaylists(playlists) {
+ function displayPlaylists(playlists) {
     const playlistsContainer = document.getElementById('playlists');
 
     // Iterate over each guardian
@@ -68,23 +65,26 @@ const guardians = {
       const playlistElement = document.createElement('div');
       playlistElement.classList.add('playlist');
       
-      // Create heading for guardian's playlist
+      // Creates heading for guardian's playlist
       const heading = document.createElement('h2');
       heading.textContent = `${guardian}'s Playlist:`;
       playlistElement.appendChild(heading);
       
-      // Create list of songs
+      // Create list of songs 
       const songList = document.createElement('ul');
       songList.style.listStyleType = "none";
-      songList.style.padding = "0";
-      songList.style.margin = "0"
-
-
       playlist.forEach(song => {
-        const songItem = document.createElement('li');
-        songItem.textContent = `${song.title} - ${song.artist}`;
-        songList.appendChild(songItem);
-      });
+          const songItem = document.createElement('li');
+          const songTitle = document.createElement('span');
+          songTitle.textContent = song.title;
+          songTitle.classList.add('song-title');
+          songItem.appendChild (songTitle);
+
+          songItem.innerHTML += ` by ${song.artist}`;
+          songItem.style.marginBottom = "10px";
+          songList.appendChild(songItem);
+
+        });
       playlistElement.appendChild(songList);
 
       // Append playlist element to playlists container
