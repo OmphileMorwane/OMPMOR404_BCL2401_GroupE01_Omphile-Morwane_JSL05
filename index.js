@@ -11,20 +11,26 @@ const songs = [
   { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
   { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
   { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
-  { title: "No Diggity", artist: "Blackstreet", genre: "R&B" },
-  { title: "Waterfalls", artist: "TLC", genre: "R&B" },
-  { title: "I'll Make Love to You", artist: "Boyz II Men", genre: "R&B" },
-  { title: "Smells Like Teen Spirit", artist: "Nirvana", genre: "Grunge" },
-  { title: "Black Hole Sun", artist: "Soundgarden", genre: "Grunge" },
-  { title: "Jeremy", artist: "Pearl Jam", genre: "Grunge" },
-  { title: "Wannabe", artist: "Spice Girls", genre: "Pop" },
-  { title: "Genie in a Bottle", artist: "Christina Aguilera", genre: "Pop" },
-  { title: "Say My Name", artist: "Destiny's Child", genre: "R&B" },
-  { title: "Billie Jean", artist: "Michael Jackson", genre: "Pop" },
-  { title: "Friends in Low Places", artist: "Garth Brooks", genre: "Country" },
-  { title: "Achy Breaky Heart", artist: "Billy Ray Cyrus", genre: "Country" },
-  { title: "Before He Cheats", artist: "Carrie Underwood", genre: "Country" },
+
 ];
+  
+
+//Added songs using the push function
+songs.push ( 
+{ title: "No Diggity", artist: "Blackstreet", genre: "R&B" },
+{ title: "Waterfalls", artist: "TLC", genre: "R&B" },
+{ title: "I'll Make Love to You", artist: "Boyz II Men", genre: "R&B" },
+{ title: "Smells Like Teen Spirit", artist: "Nirvana", genre: "Grunge" },
+{ title: "Black Hole Sun", artist: "Soundgarden", genre: "Grunge" },
+{ title: "Jeremy", artist: "Pearl Jam", genre: "Grunge" },
+{ title: "Wannabe", artist: "Spice Girls", genre: "Pop" },
+{ title: "Genie in a Bottle", artist: "Christina Aguilera", genre: "Pop" },
+{ title: "Say My Name", artist: "Destiny's Child", genre: "R&B" },
+{ title: "Billie Jean", artist: "Michael Jackson", genre: "Pop" },
+{ title: "Friends in Low Places", artist: "Garth Brooks", genre: "Country" },
+{ title: "Achy Breaky Heart", artist: "Billy Ray Cyrus", genre: "Country" },
+{ title: "Before He Cheats", artist: "Carrie Underwood", genre: "Country" },
+);
 
 // Object containing each Guardian's preferred genre
 const guardians = {
